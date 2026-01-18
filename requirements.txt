@@ -1,4 +1,4 @@
-# MarketPulse Requirements
+# MarketPulse 依赖包
 # 股票数据获取
 akshare>=1.18.3
 
@@ -9,5 +9,5 @@ numpy>=1.23.0
 # 网络请求（akshare 的依赖）
 requests>=2.28.0
 
-# 邮件处理
-secure-smtplib>=0.1.1
+# 环境变量管理
+python-dotenv>=0.19.0

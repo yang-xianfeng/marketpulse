@@ -1,0 +1,52 @@
+{
+  "stocks": {
+    "watchlist": [
+      "002738",
+      "159545",
+      "159915"
+    ],
+    "description": "自选股票库"
+  },
+  "notification": {
+    "enabled": true,
+    "email": {
+      "enabled": true,
+      "sender": "${SENDER_EMAIL}",
+      "receiver": "${RECEIVER_EMAIL}",
+      "smtp_server": "smtp.qq.com",
+      "smtp_port": 465,
+      "auth_code_env": "SMTP_AUTH_CODE"
+    }
+  },
+  "schedule": {
+    "time": "09:30",
+    "timezone": "Asia/Shanghai",
+    "description": "每日9:30开盘后运行分析"
+  },
+  "strategies": [
+    {
+      "name": "ma_crossover",
+      "enabled": true,
+      "type": "moving_average",
+      "params": {
+        "periods": [5, 10, 20],
+        "signals": {
+          "break_ma5": "价格跌破5日均线 - 建议减仓",
+          "break_ma10": "价格跌破10日均线 - 建议再减仓",
+          "break_ma20": "价格跌破20日均线 - 建议清仓"
+        }
+      }
+    }
+  ],
+  "data_source": {
+    "primary": "akshare",
+    "fallback": "mock",
+    "cache_enabled": true,
+    "cache_ttl_minutes": 60
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s",
+    "file": "marketpulse.log"
+  }
+}
