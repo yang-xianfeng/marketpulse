@@ -1,0 +1,9 @@
+{
+  "sender_email": "your_email@qq.com",
+  "receiver_email": "receiver_email@qq.com",
+  "password": "your_smtp_password",
+  "smtp_server": "smtp.qq.com",
+  "smtp_port": 465,
+  "enabled": false,
+  "notes": "启用邮件通知时，将 enabled 设置为 true，并填入正确的邮箱和授权码"
+}
